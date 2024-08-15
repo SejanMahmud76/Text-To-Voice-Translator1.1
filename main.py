@@ -6,8 +6,19 @@ if __name__ == '__main__':
 
     # Initialize the text-to-speech engine
     engine = pyttsx3.init()
-    # Prompt the user to enter text
-    x = input("Enter what you want to translate (type 'q' to quit):")
-    # Use the text-to-speech engine to say the entered text
-    engine.say(x)
-    engine.runAndWait()
+
+    # Infinite loop to continuously take user input
+    while True:
+        # Prompt the user to enter text
+        x = input("Enter what you want to translate (type 'q' to quit):")
+
+        # Check if the user wants to quit
+        if x == "q":
+            # Say goodbye message
+            engine.say('bye bye friend')
+            engine.runAndWait()
+            break  # Exit the loop
+
+        # Use the text-to-speech engine to say the entered text
+        engine.say(x)
+        engine.runAndWait()
